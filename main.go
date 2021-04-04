@@ -1,22 +1,18 @@
 package main
 
-import "fmt"
-
-type Pessoa struct {
-	Nome  string
-	Idade int
-}
-
-func (p Pessoa) setNome(nome string){
-	p.Nome = nome
-	fmt.Println(p.Nome)
-}
+import (
+	"github.com/lucasAzS/legendary-computing-machine/model"
+)
 
 func main() {
-	pessoa := Pessoa{
-		Nome: "Lucas",
-		Idade: 2,
-	}
+	produto1 := model.NewProduct()
+	produto1.Name = "Carrinho"
 
-	pessoa.setNome("Otávio")
+	produto2 := model.NewProduct()
+	produto2.Name = "Boneca da xuxa"
+
+	products := model.Products{}
+
+	products.Add(produto1)
+	products.Add(produto2)
 }
